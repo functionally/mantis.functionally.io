@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mantis Oracle on the Cardano Mainnet</title>
+  </head>
+  <body style="font-family:sans-serif">
+    <h1>Mantis Oracle on the Cardano Mainnet</h1>
+    <p>The Mantis oracle publishes to the <a style="text-decoration:none;color:darkblue" href="https://explorer.cardano.org/en">Cardano blockchain’s Mainnet</a>.
+    <h2>Energy Prices</h2>
+    <p>This oracle publishes energy prices in the United States each weekday, scraped from the US Energy Information Administration’s <span style="font-style:italic">Daily Prices</span> page.</p>
+    <h3>Datapoints</h3>
+    <table>
+      <thead>
+        <tr>
+          <th colspan="2">Wholesale Spot Petroleum Prices</th>
+          <th colspan="2">Select Spot Prices for Delivery Today</th>
+        </tr>
+      <tbody>
+        <tr>
+          <td style="vertical-align:top;padding:10px">
+            <p style="font-style:italic;margin-block-end:-10px">Crude Oil ($/barrel)</p>
+            <ul>
+              <li>Brent</li>
+              <li>Louisiana Light</li>
+              <li>WTI</li>
+            </ul>
+            <p style="font-style:italic;margin-block-end:-10px">Gasoline (RBOB) ($/gallon)</p>
+            <ul>
+              <li>Gulf Coast</li>
+              <li>Los Angeles</li>
+              <li>NY Harbor</li>
+            </ul>
+          </td>
+          <td style="vertical-align:top;padding:10px">
+            <p style="font-style:italic;margin-block-end:-10px">Heating Oil ($/gallon)</p>
+            <ul>
+              <li>Gulf Coast</li>
+              <li>NY Harbor</li>
+            </ul>
+            <p style="font-style:italic;margin-block-end:-10px">Low-Sulfur Diesel ($/gallon)</p>
+            <ul>
+              <li>Gulf Coast</li>
+              <li>Los Angeles</li>
+              <li>NY Harbor</li>
+            </ul>
+            <p style="font-style:italic;margin-block-end:-10px">Propane ($/gallon)</p>
+            <ul>
+              <li>Conway, KS</li>
+              <li>Mont Belvieu, TX</li>
+            </ul>
+         </td>
+         <td style="vertical-align:top;padding:10px">
+           <p style="font-style:italic;margin-block-end:-10px">Electricity ($/MWh)</p>
+           <ul>
+             <li>Houston</li>
+             <li>Louisiana</li>
+             <li>Mid-Atlantic</li>
+             <li>Midwest</li>
+             <li>New England</li>
+             <li>New York City</li>
+             <li>Northern CA</li>
+             <li>Northwest</li>
+             <li>Southern CA</li>
+             <li>Southwest</li>
+           </ul>
+         </td>
+         <td style="vertical-align:top;padding:10px">
+           <p style="font-style:italic;margin-block-end:-10px">Natural Gas ($/millon Btu)</p>
+           <ul>
+             <li>Houston</li>
+             <li>Louisiana</li>
+             <li>Mid-Atlantic</li>
+             <li>Midwest</li>
+             <li>New England</li>
+             <li>New York City</li>
+             <li>Northern CA</li>
+             <li>Northwest</li>
+             <li>Southern CA</li>
+             <li>Southwest</li>
+           </ul>
+         </td>
+       </tr>
+     </tbody>
+  </table>
+    <h3>Technical Details</h3>
+    <ul>
+      <li>Data source: <a style="text-decoration:none;color:darkblue" href="https://www.eia.gov/todayinenergy/prices.php">US Energy Information Administration, Today in Energy, Daily Prices</a>.</li>
+      <li>Data archived in IPFS: <a style="text-decoration:none;color:darkblue" href="https://gateway.pinata.cloud/ipns/12D3KooWCnmRPTgWcGSNUMPfYjyMVYtcrZpLp75Su1Hs7gUN9xs1/raw">[HTML]</a> <a style="text-decoration:none;color:darkblue" href="https://gateway.pinata.cloud/ipns/12D3KooWCnmRPTgWcGSNUMPfYjyMVYtcrZpLp75Su1Hs7gUN9xs1/json">[JSON]</a>.</li>
+      <li>Cardano address: <a style="text-decoration:none;color:darkblue" href="https://adaex.org/addr1qy9prvx8ufwutkwxx9cmmuuajaqmjqwujqlp9d8pvg6gupcvluken35ncjnu0puetf5jvttedkze02d5kf890kquh60sut9jg7">addr1qy9prvx8ufwutkwxx9cmmuuajaqmjqwujqlp9d8pvg6gupcvluken35ncjnu0puetf5jvttedkze02d5kf890kquh60sut9jg7</a>.</li>
+      <li>Transaction metadata key: 247426.</li>
+      <li>Oracle metadata: <a style="text-decoration:none;color:darkblue" href="mantis.metadata.json">[JSON]</a> <a style="text-decoration:none;color:darkblue" href="mantis.metadata.hash">[hash]</a> <a style="text-decoration:none;color:darkblue" href="https://adaex.org/206c15e47803b5b3f5fba83db0faf2b3102ace03a30bb75de8e5621d4f72ca04">[txn]</a>.</li>
+      <li>Example transaction: <a style="text-decoration:none;color:darkblue" href="https://adaex.org/43b1bae64249e4bb8d88186b8e2ec7c567f9605a20a05b716b93744c733cc643">43b1bae64249e4bb8d88186b8e2ec7c567f9605a20a05b716b93744c733cc643</a>.</li>
+      <li>Source code: <a style="text-decoration:none;color:darkblue" href="https://github.com/functionally/mantis.functionally.io/ReadMe.md">https://github.com/functionally/mantis.functionally.io/</a>.</li>
+      <li>This service runs so long as the aforementioned address has a balance of at least 2 ADA; each transaction has a net cost of approximately 0.23 ADA.</li>
+    </ul>
+  <hr/>
+  <p>Contact: <a style="text-decoration:none;color:darkblue" href="mailto:code@functionally.io">code@functionally.io</a>.</p>
+  </body>
+</html>
