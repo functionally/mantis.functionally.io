@@ -7,8 +7,8 @@ set -e
 export IPFS_PATH=/data/ipfs/repo
 
 TIMESTAMP=$(date --utc --rfc-3339=seconds | sed -e 's/ /T/')
-HTML=data/raw/$TIMESTAMP.html
-JSON=data/json/$TIMESTAMP.json
+HTML=../data/raw/$TIMESTAMP.html
+JSON=../data/json/$TIMESTAMP.json
 
 echo Timestamp: $TIMESTAMP
 
@@ -23,6 +23,6 @@ tidy -quiet -numeric -asxml 2>/dev/null                | \
 saxonb - eia-daily-prices.xsl ts="$TIMESTAMP" cid=$CID | \
 json_pp                                                > "$JSON"
 
-DIR_CID=$(ipfs add -q -r data | tail -n 1)
+DIR_CID=$(ipfs add -q -r ../data | tail -n 1)
 
 ipfs name publish --key=mantis /ipfs/$DIR_CID
