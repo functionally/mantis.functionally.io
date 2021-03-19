@@ -26,3 +26,10 @@ json_pp                                                > "$JSON"
 DIR_CID=$(ipfs add -q -r ../data | tail -n 1)
 
 ipfs name publish --key=mantis /ipfs/$DIR_CID
+
+
+NETWORK=mainnet
+
+export CARDANO_NODE_SOCKET_PATH=$USER/.local/share/Daedalus/$NETWORK/cardano-node.socket
+
+gpg -d payment.skey.gpg | ./mantis $NETWORK.mantis --metadata $JSON

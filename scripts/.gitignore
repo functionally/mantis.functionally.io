@@ -1,0 +1,5 @@
+mantis
+*.mantis
+*.skey
+*.vkey
+*.skey.gpg
