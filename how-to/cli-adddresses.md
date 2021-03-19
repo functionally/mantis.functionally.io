@@ -5,7 +5,7 @@ Here is a recipe for recovering private and stake keys if a [Trezor Model T](htt
 
 ## Prerequisites
 
-This procedure requires [cardano-wallet](https://github.com/input-output-hk/cardano-wallet/tree/master/README.md) and [cardano-node](https://github.com/input-output-hk/cardano-node/tree/master/cardano-cli/README.md).
+This procedure requires [cardano-wallet](https://github.com/input-output-hk/cardano-wallet/tree/master/README.md) and [cardano-cli](https://github.com/input-output-hk/cardano-node/tree/master/cardano-cli/README.md).
 
 
 ## Recovering the root private key.

@@ -19,7 +19,7 @@
 <h1 id="how-to-generate-cardano-payment-and-stake-keys-from-a-trezor-model-t-seed-phrase">How to Generate Cardano Payment and Stake Keys from a Trezor Model T Seed Phrase</h1>
 <p>Here is a recipe for recovering private and stake keys if a <a href="https://trezor.io/">Trezor Model T</a> is lost or damaged and a new Trezor Model T is not available. (Note that performing this procedure defeats the purpose of using a hardware wallet, however, since it involves typing seed phrases on a computer.) This procedure also works for seed phrases from <a href="https://daedaluswallet.io/">Daedalus wallets</a> and perhaps also for those from <a href="https://yoroi-wallet.com/">Yoroi wallets</a>. <em>Always use best practices for securing seed phrases and the private/secret key files generated below.</em></p>
 <h2 id="prerequisites">Prerequisites</h2>
-<p>This procedure requires <a href="https://github.com/input-output-hk/cardano-wallet/tree/master/README.md">cardano-wallet</a> and <a href="https://github.com/input-output-hk/cardano-node/tree/master/cardano-cli/README.md">cardano-node</a>.</p>
+<p>This procedure requires <a href="https://github.com/input-output-hk/cardano-wallet/tree/master/README.md">cardano-wallet</a> and <a href="https://github.com/input-output-hk/cardano-node/tree/master/cardano-cli/README.md">cardano-cli</a>.</p>
 <h2 id="recovering-the-root-private-key.">Recovering the root private key.</h2>
 <p>Enter the 12-word passphrase (Trezor Model T) or 24-word passphrase (Shelley wallet on Daedalus) at the prompt to convert it to the root private key:</p>
 <pre><code>BASENAME=my-credentials
