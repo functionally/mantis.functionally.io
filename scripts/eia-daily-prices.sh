@@ -1,6 +1,6 @@
 #!/usr/bin/env nix-shell
 #!nix-shell -I nixpkgs=https://github.com/NixOS/nixpkgs/archive/bc260badaebf67442befe20fb443034d3a91f2b3.tar.gz
-#!nix-shell -i bash -p html-tidy saxonb
+#!nix-shell -i bash -p html-tidy saxonb jq
 
 set -e
 
@@ -20,8 +20,16 @@ echo CID: $CID
 
 sed -e '/fb:like/d' "$HTML"                            | \
 tidy -quiet -numeric -asxml 2>/dev/null                | \
-saxonb - eia-daily-prices.xsl ts="$TIMESTAMP" cid=$CID | \
-json_pp                                                > "$JSON"
+saxonb - eia-daily-prices.xsl ts="$TIMESTAMP" cid=$CID > tmp.json
+
+
+curl -s 'https://markets.newyorkfed.org/beta/api/rates/secured/sofr/last/1.json' | \
+jq '{"247427" : .refRates[] | { (.type) : { "effectiveDate" : .effectiveDate , "percentRate" : (.percentRate | tostring ), "source" : "https://markets.newyorkfed.org" } } }' | \
+jq -s add - tmp.json > $JSON
+
+
+less $JSON
+
 
 DIR_CID=$(ipfs add -q -r ../data | tail -n 1)
 
@@ -30,6 +38,6 @@ ipfs name publish --key=mantis /ipfs/$DIR_CID
 
 NETWORK=mainnet
 
-export CARDANO_NODE_SOCKET_PATH=$USER/.local/share/Daedalus/$NETWORK/cardano-node.socket
+export CARDANO_NODE_SOCKET_PATH=$HOME/.local/share/Daedalus/$NETWORK/cardano-node.socket
 
 gpg -d payment.skey.gpg | ./mantis $NETWORK.mantis --metadata $JSON

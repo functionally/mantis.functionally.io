@@ -3,3 +3,4 @@ mantis
 *.skey
 *.vkey
 *.skey.gpg
+tmp.json
