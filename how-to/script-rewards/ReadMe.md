@@ -7,11 +7,20 @@ Use Case
 An "investor" contributes 1000 ADA to a time-locked script that pays its staking rewards to a "rewardee". In lieu of receiving those staking rewards, the rewardee contributes 10 ADA to the script. Only the investor can redeem the funds from the script, and only after 2 epochs have passed.
 
 
+Investor Actions
+----------------
+
+1.  Create and protect the redemption signing and verification keys.
+2.  Witness the initial transaction.
+3.  Sign the final transaction.
+4.  Submit the final transaction when the time comes to redeem.
+
+
 Security Considerations
 -----------------------
 
 1.  The investor must review and verify the following:
-    1.  That the script will only pay to the redemption signing key.
+    1.  That the script will only pay to the redemption key.
     2.  That the script locks the funds until the agreed-upon slot.
     3.  That the transaction they initially witness has the script as output and the proper amount of input.
 2.  If the investor looses the redemption key (or, equivalently, the final signed transaction), the funds will be lost.
