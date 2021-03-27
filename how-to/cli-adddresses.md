@@ -3,8 +3,6 @@ title: How to Generate Cardano Payment and Stake Keys from a Trezor Model T Seed
 ---
 
 
-# How to Generate Cardano Payment and Stake Keys from a Trezor Model T Seed Phrase
-
 Here is a recipe for recovering payment and stake keys if a [Trezor Model T](https://trezor.io/) is lost or damaged and a new Trezor Model T is not available. (Note that performing this procedure defeats the purpose of using a hardware wallet, however, since it involves typing seed phrases on a computer.) This procedure also works for seed phrases from [Daedalus wallets](https://daedaluswallet.io/) and perhaps also for those from [Yoroi wallets](https://yoroi-wallet.com/). *Always use best practices (e.g., a well-secured air-gapped computer) for working securely with seed phrases and for generating private/secret key files.*
 
 
@@ -73,3 +71,8 @@ One can also generate the stake address:
 	cardano-cli stake-address build --mainnet \
 	                                --stake-verification-key-file $BASENAME.stake.pub \
 	                                --out-file $BASENAME.stake.address
+
+
+## Addendum
+
+The [cardano-address tool](https://github.com/input-output-hk/cardano-addresses/blob/master/README.md) performs similar functions to [cardano-wallet](https://github.com/input-output-hk/cardano-wallet/tree/master/README.md) and [cardano-cli](https://github.com/input-output-hk/cardano-node/tree/master/cardano-cli/README.md).
