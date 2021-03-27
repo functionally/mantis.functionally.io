@@ -4,7 +4,7 @@ Locking ADA for Staking
 Use Case
 --------
 
-An "investor" contributes 1000 ADA to a time-locked script that pays its staking rewards to a "rewardee". In lieu of receiving those staking rewards, the investor receive an extra 10 ADA that the rewardee contributes to the script. Only the investor can redeem the funds from the script, and only after the agreed-upon number of epochs have passed.
+An "investor" contributes 1000 ADA to a time-locked script that pays its staking rewards to a "rewardee". In lieu of receiving those staking rewards, the investor receives an extra 10 ADA that the rewardee contributes to the script. Only the investor can redeem the funds from the script, and only after the agreed-upon number of epochs have passed.
 
 
 Investor Actions
