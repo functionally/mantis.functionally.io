@@ -1,5 +1,5 @@
-Mantis Oracle on the Cardano Mainnet
-====================================
+Functional-Mantis Oracle on the Cardano Mainnet
+===============================================
 
 Documentation: https://mantis.functionally.io/.
 
