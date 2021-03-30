@@ -23,7 +23,7 @@ tidy -quiet -numeric -asxml 2>/dev/null                | \
 saxonb - eia-daily-prices.xsl ts="$TIMESTAMP" cid=$CID > tmp.json
 
 
-curl -s 'https://markets.newyorkfed.org/beta/api/rates/secured/sofr/last/1.json' | \
+curl -s 'https://markets.newyorkfed.org/api/rates/secured/sofr/last/1.json' | \
 jq '{"247427" : .refRates[] | { (.type) : { "effectiveDate" : .effectiveDate , "percentRate" : (.percentRate | tostring ), "source" : "https://markets.newyorkfed.org" } } }' | \
 jq -s add - tmp.json > $JSON
 
