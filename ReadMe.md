@@ -5,8 +5,8 @@ Documentation: https://mantis.functionally.io/.
 
 Scripts:
 
-*  Scrape EIA daily energy prices: [eia-daily-prices.sh](scripts/eia-daily-prices.sh).
-*  Convert HTML to JSON: [eia-daily-prices.xsl](scripts/eia-daily-prices.xsl).
+*  Oracle for scrape SOFR spot/futures rates and EIA daily energy prices: [oracle.sh](scripts/oracle.sh).
+*  Convert EIA daily energy prices from HTML to JSON: [eia-daily-prices.xsl](scripts/eia-daily-prices.xsl).
 
 Report issues [here](https://github.com/functionally/mantis.functionally.io/issues).
 

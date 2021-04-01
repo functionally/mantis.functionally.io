@@ -10,7 +10,7 @@
 
   <xsl:template match="/">
 
-    <xsl:text>{"247426" : {"Timestamp" : "</xsl:text>
+    <xsl:text>{"247426" : {"Schema" : "https://mantis.functionally.io/schema/247426/v1.json", "Timestamp" : "</xsl:text>
     <xsl:value-of select="$ts"/>
     <xsl:text>", "Processor": "https://mantis.functionally.io/mantis.metadata.json", "Source": ["US Energy Information Administration (EIA) Daily Energy Prices", "https://www.eia.gov/todayinenergy/prices.php", "ipfs://</xsl:text>
     <xsl:value-of select="$cid"/>

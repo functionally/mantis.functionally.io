@@ -1,0 +1,692 @@
+{
+   "$schema" : "http://json-schema.org/draft-07/schema#",
+   "$id" : "https://mantis.functionally.io/schema/247427/v1.json",
+   "properties" : {
+      "Schema" : {
+         "const" : "https://mantis.functionally.io/schema/247427/v1.json"
+      },
+      "Timestamp" : {
+         "type" : "string",
+         "format" : "date-time"
+      },
+      "SOFR" : {
+         "properties" : {
+            "effectiveDate" : {
+               "type" : "string",
+               "format" : "date"
+            },
+            "percentRate" : {
+               "type" : "string",
+               "$comment" : "Quoted value is the rate in percent."
+            },
+            "source" : {
+               "type" : "string",
+               "format" : "uri"
+            }
+         },
+         "required" : [
+            "effectiveDate",
+            "percentRate",
+            "source"
+         ],
+         "type" : "object"
+      },
+      "SOFR_1MONTH" : {
+         "properties" : {
+            "$comment" : "Quoted values are 100.00 minus the numerical value of the rate of interest.",
+            "APR2021" : {
+               "properties" : {
+                  "open" : {
+                     "type" : "string"
+                  },
+                  "settle" : {
+                     "type" : "string",
+                     "format" : "date"
+                  }
+               },
+               "required" : [
+                  "open",
+                  "settle"
+               ],
+               "type" : "object"
+            },
+            "MAY2021" : {
+               "properties" : {
+                  "open" : {
+                     "type" : "string"
+                  },
+                  "settle" : {
+                     "type" : "string",
+                     "format" : "date"
+                  }
+               },
+               "required" : [
+                  "open",
+                  "settle"
+               ],
+               "type" : "object"
+            },
+            "JUN2021" : {
+               "properties" : {
+                  "open" : {
+                     "type" : "string"
+                  },
+                  "settle" : {
+                     "type" : "string",
+                     "format" : "date"
+                  }
+               },
+               "required" : [
+                  "open",
+                  "settle"
+               ],
+               "type" : "object"
+            },
+            "JUL2021" : {
+               "properties" : {
+                  "open" : {
+                     "type" : "string"
+                  },
+                  "settle" : {
+                     "type" : "string",
+                     "format" : "date"
+                  }
+               },
+               "required" : [
+                  "open",
+                  "settle"
+               ],
+               "type" : "object"
+            },
+            "AUG2021" : {
+               "properties" : {
+                  "open" : {
+                     "type" : "string"
+                  },
+                  "settle" : {
+                     "type" : "string",
+                     "format" : "date"
+                  }
+               },
+               "required" : [
+                  "open",
+                  "settle"
+               ],
+               "type" : "object"
+            },
+            "SEP2021" : {
+               "properties" : {
+                  "open" : {
+                     "type" : "string"
+                  },
+                  "settle" : {
+                     "type" : "string",
+                     "format" : "date"
+                  }
+               },
+               "required" : [
+                  "open",
+                  "settle"
+               ],
+               "type" : "object"
+            },
+            "OCT2021" : {
+               "properties" : {
+                  "open" : {
+                     "type" : "string"
+                  },
+                  "settle" : {
+                     "type" : "string",
+                     "format" : "date"
+                  }
+               },
+               "required" : [
+                  "open",
+                  "settle"
+               ],
+               "type" : "object"
+            },
+            "NOV2021" : {
+               "properties" : {
+                  "open" : {
+                     "type" : "string"
+                  },
+                  "settle" : {
+                     "type" : "string",
+                     "format" : "date"
+                  }
+               },
+               "required" : [
+                  "open",
+                  "settle"
+               ],
+               "type" : "object"
+            },
+            "DEC2021" : {
+               "properties" : {
+                  "open" : {
+                     "type" : "string"
+                  },
+                  "settle" : {
+                     "type" : "string",
+                     "format" : "date"
+                  }
+               },
+               "required" : [
+                  "open",
+                  "settle"
+               ],
+               "type" : "object"
+            },
+            "JAN2022" : {
+               "properties" : {
+                  "open" : {
+                     "type" : "string"
+                  },
+                  "settle" : {
+                     "type" : "string",
+                     "format" : "date"
+                  }
+               },
+               "required" : [
+                  "open",
+                  "settle"
+               ],
+               "type" : "object"
+            },
+            "FEB2022" : {
+               "properties" : {
+                  "open" : {
+                     "type" : "string"
+                  },
+                  "settle" : {
+                     "type" : "string",
+                     "format" : "date"
+                  }
+               },
+               "required" : [
+                  "open",
+                  "settle"
+               ],
+               "type" : "object"
+            },
+            "MAR2022" : {
+               "properties" : {
+                  "open" : {
+                     "type" : "string"
+                  },
+                  "settle" : {
+                     "type" : "string",
+                     "format" : "date"
+                  }
+               },
+               "required" : [
+                  "open",
+                  "settle"
+               ],
+               "type" : "object"
+            },
+            "APR2022" : {
+               "properties" : {
+                  "open" : {
+                     "type" : "string"
+                  },
+                  "settle" : {
+                     "type" : "string",
+                     "format" : "date"
+                  }
+               },
+               "required" : [
+                  "open",
+                  "settle"
+               ],
+               "type" : "object"
+            },
+            "MAY2022" : {
+               "properties" : {
+                  "open" : {
+                     "type" : "string"
+                  },
+                  "settle" : {
+                     "type" : "string",
+                     "format" : "date"
+                  }
+               },
+               "required" : [
+                  "open",
+                  "settle"
+               ],
+               "type" : "object"
+            },
+            "JUN2022" : {
+               "properties" : {
+                  "open" : {
+                     "type" : "string"
+                  },
+                  "settle" : {
+                     "type" : "string",
+                     "format" : "date"
+                  }
+               },
+               "required" : [
+                  "open",
+                  "settle"
+               ],
+               "type" : "object"
+            },
+            "JUL2022" : {
+               "properties" : {
+                  "open" : {
+                     "type" : "string"
+                  },
+                  "settle" : {
+                     "type" : "string",
+                     "format" : "date"
+                  }
+               },
+               "required" : [
+                  "open",
+                  "settle"
+               ],
+               "type" : "object"
+            },
+            "AUG2022" : {
+               "properties" : {
+                  "open" : {
+                     "type" : "string"
+                  },
+                  "settle" : {
+                     "type" : "string",
+                     "format" : "date"
+                  }
+               },
+               "required" : [
+                  "open",
+                  "settle"
+               ],
+               "type" : "object"
+            },
+            "SEP2022" : {
+               "properties" : {
+                  "open" : {
+                     "type" : "string"
+                  },
+                  "settle" : {
+                     "type" : "string",
+                     "format" : "date"
+                  }
+               },
+               "required" : [
+                  "open",
+                  "settle"
+               ],
+               "type" : "object"
+            },
+            "OCT2022" : {
+               "properties" : {
+                  "open" : {
+                     "type" : "string"
+                  },
+                  "settle" : {
+                     "type" : "string",
+                     "format" : "date"
+                  }
+               },
+               "required" : [
+                  "open",
+                  "settle"
+               ],
+               "type" : "object"
+            },
+            "NOV2022" : {
+               "properties" : {
+                  "open" : {
+                     "type" : "string"
+                  },
+                  "settle" : {
+                     "type" : "string",
+                     "format" : "date"
+                  }
+               },
+               "required" : [
+                  "open",
+                  "settle"
+               ],
+               "type" : "object"
+            },
+            "DEC2022" : {
+               "properties" : {
+                  "open" : {
+                     "type" : "string"
+                  },
+                  "settle" : {
+                     "type" : "string",
+                     "format" : "date"
+                  }
+               },
+               "required" : [
+                  "open",
+                  "settle"
+               ],
+               "type" : "object"
+            },
+            "JAN2023" : {
+               "properties" : {
+                  "open" : {
+                     "type" : "string"
+                  },
+                  "settle" : {
+                     "type" : "string",
+                     "format" : "date"
+                  }
+               },
+               "required" : [
+                  "open",
+                  "settle"
+               ],
+               "type" : "object"
+            },
+            "FEB2023" : {
+               "properties" : {
+                  "open" : {
+                     "type" : "string"
+                  },
+                  "settle" : {
+                     "type" : "string",
+                     "format" : "date"
+                  }
+               },
+               "required" : [
+                  "open",
+                  "settle"
+               ],
+               "type" : "object"
+            },
+            "MAR2023" : {
+               "properties" : {
+                  "open" : {
+                     "type" : "string"
+                  },
+                  "settle" : {
+                     "type" : "string",
+                     "format" : "date"
+                  }
+               },
+               "required" : [
+                  "open",
+                  "settle"
+               ],
+               "type" : "object"
+            }
+         },
+         "type" : "object"
+      },
+      "SOFR_3MONTH" : {
+         "properties" : {
+            "$comment" : "Quoted values are 100.00 minus the numerical value of the rate of interest.",
+            "MAR2021" : {
+               "properties" : {
+                  "open" : {
+                     "type" : "string"
+                  },
+                  "settle" : {
+                     "type" : "string",
+                     "format" : "date"
+                  }
+               },
+               "required" : [
+                  "open",
+                  "settle"
+               ],
+               "type" : "object"
+            },
+            "JUN2021" : {
+               "properties" : {
+                  "open" : {
+                     "type" : "string"
+                  },
+                  "settle" : {
+                     "type" : "string",
+                     "format" : "date"
+                  }
+               },
+               "required" : [
+                  "open",
+                  "settle"
+               ],
+               "type" : "object"
+            },
+            "SEP2021" : {
+               "properties" : {
+                  "open" : {
+                     "type" : "string"
+                  },
+                  "settle" : {
+                     "type" : "string",
+                     "format" : "date"
+                  }
+               },
+               "required" : [
+                  "open",
+                  "settle"
+               ],
+               "type" : "object"
+            },
+            "DEC2021" : {
+               "properties" : {
+                  "open" : {
+                     "type" : "string"
+                  },
+                  "settle" : {
+                     "type" : "string",
+                     "format" : "date"
+                  }
+               },
+               "required" : [
+                  "open",
+                  "settle"
+               ],
+               "type" : "object"
+            },
+            "MAR2022" : {
+               "properties" : {
+                  "open" : {
+                     "type" : "string"
+                  },
+                  "settle" : {
+                     "type" : "string",
+                     "format" : "date"
+                  }
+               },
+               "required" : [
+                  "open",
+                  "settle"
+               ],
+               "type" : "object"
+            },
+            "JUN2022" : {
+               "properties" : {
+                  "open" : {
+                     "type" : "string"
+                  },
+                  "settle" : {
+                     "type" : "string",
+                     "format" : "date"
+                  }
+               },
+               "required" : [
+                  "open",
+                  "settle"
+               ],
+               "type" : "object"
+            },
+            "SEP2022" : {
+               "properties" : {
+                  "open" : {
+                     "type" : "string"
+                  },
+                  "settle" : {
+                     "type" : "string",
+                     "format" : "date"
+                  }
+               },
+               "required" : [
+                  "open",
+                  "settle"
+               ],
+               "type" : "object"
+            },
+            "DEC2022" : {
+               "properties" : {
+                  "open" : {
+                     "type" : "string"
+                  },
+                  "settle" : {
+                     "type" : "string",
+                     "format" : "date"
+                  }
+               },
+               "required" : [
+                  "open",
+                  "settle"
+               ],
+               "type" : "object"
+            },
+            "MAR2023" : {
+               "properties" : {
+                  "open" : {
+                     "type" : "string"
+                  },
+                  "settle" : {
+                     "type" : "string",
+                     "format" : "date"
+                  }
+               },
+               "required" : [
+                  "open",
+                  "settle"
+               ],
+               "type" : "object"
+            },
+            "JUN2023" : {
+               "properties" : {
+                  "open" : {
+                     "type" : "string"
+                  },
+                  "settle" : {
+                     "type" : "string",
+                     "format" : "date"
+                  }
+               },
+               "required" : [
+                  "open",
+                  "settle"
+               ],
+               "type" : "object"
+            },
+            "SEP2023" : {
+               "properties" : {
+                  "open" : {
+                     "type" : "string"
+                  },
+                  "settle" : {
+                     "type" : "string",
+                     "format" : "date"
+                  }
+               },
+               "required" : [
+                  "open",
+                  "settle"
+               ],
+               "type" : "object"
+            },
+            "DEC2023" : {
+               "properties" : {
+                  "open" : {
+                     "type" : "string"
+                  },
+                  "settle" : {
+                     "type" : "string",
+                     "format" : "date"
+                  }
+               },
+               "required" : [
+                  "open",
+                  "settle"
+               ],
+               "type" : "object"
+            },
+            "MAR2024" : {
+               "properties" : {
+                  "open" : {
+                     "type" : "string"
+                  },
+                  "settle" : {
+                     "type" : "string",
+                     "format" : "date"
+                  }
+               },
+               "required" : [
+                  "open",
+                  "settle"
+               ],
+               "type" : "object"
+            },
+            "JUN2024" : {
+               "properties" : {
+                  "open" : {
+                     "type" : "string"
+                  },
+                  "settle" : {
+                     "type" : "string",
+                     "format" : "date"
+                  }
+               },
+               "required" : [
+                  "open",
+                  "settle"
+               ],
+               "type" : "object"
+            },
+            "SEP2024" : {
+               "properties" : {
+                  "open" : {
+                     "type" : "string"
+                  },
+                  "settle" : {
+                     "type" : "string",
+                     "format" : "date"
+                  }
+               },
+               "required" : [
+                  "open",
+                  "settle"
+               ],
+               "type" : "object"
+            },
+            "DEC2024" : {
+               "properties" : {
+                  "open" : {
+                     "type" : "string"
+                  },
+                  "settle" : {
+                     "type" : "string",
+                     "format" : "date"
+                  }
+               },
+               "required" : [
+                  "open",
+                  "settle"
+               ],
+               "type" : "object"
+            }
+         },
+         "type" : "object"
+      }
+   },
+   "required" : [
+      "Schema",
+      "Timestamp"
+   ],
+   "type" : "object"
+}

@@ -1,0 +1,175 @@
+{
+   "$schema" : "http://json-schema.org/draft-07/schema#",
+   "$id" : "https://mantis.functionally.io/schema/247426/v1.json",
+   "properties" : {
+      "Schema" : {
+         "const" : "https://mantis.functionally.io/schema/247426/v1.json"
+      },
+      "Timestamp" : {
+         "type" : "string",
+         "format" : "date-time"
+      },
+      "Source" : {
+         "items" : [
+            {
+               "type" : "string"
+            }
+         ],
+         "type" : "array"
+      },
+      "Date" : {
+         "type" : "string"
+      },
+      "Wholesale Spot Petroleum Prices" : {
+         "properties" : {
+            "Crude Oil ($/barrel)" : {
+               "properties" : {
+                  "Brent" : {
+                     "type" : "string"
+                  },
+                  "Louisiana Light" : {
+                     "type" : "string"
+                  },
+                  "WTI" : {
+                     "type" : "string"
+                  }
+               },
+               "type" : "object"
+            },
+            "Gasoline (RBOB) ($/gallon)" : {
+               "properties" : {
+                  "Gulf Coast" : {
+                     "type" : "string"
+                  },
+                  "Los Angeles" : {
+                     "type" : "string"
+                  },
+                  "NY Harbor" : {
+                     "type" : "string"
+                  }
+               },
+               "type" : "object"
+            },
+            "Heating Oil ($/gallon)" : {
+               "properties" : {
+                  "Gulf Coast" : {
+                     "type" : "string"
+                  },
+                  "NY Harbor" : {
+                     "type" : "string"
+                  }
+               },
+               "type" : "object"
+            },
+            "Low-Sulfur Diesel ($/gallon)" : {
+               "properties" : {
+                  "Gulf Coast" : {
+                     "type" : "string"
+                  },
+                  "Los Angeles" : {
+                     "type" : "string"
+                  },
+                  "NY Harbor" : {
+                     "type" : "string"
+                  }
+               },
+               "type" : "object"
+            },
+            "Propane ($/gallon)" : {
+               "properties" : {
+                  "Conway, KS" : {
+                     "type" : "string"
+                  },
+                  "Mont Belvieu, TX" : {
+                     "type" : "string"
+                  }
+               },
+               "type" : "object"
+            }
+         },
+         "type" : "object"
+      }
+   },
+      "Select Spot Prices for Delivery Today" : {
+         "properties" : {
+            "Electricity ($/MWh)" : {
+               "properties" : {
+                  "Houston" : {
+                     "type" : "string"
+                  },
+                  "Louisiana" : {
+                     "type" : "string"
+                  },
+                  "Mid-Atlantic" : {
+                     "type" : "string"
+                  },
+                  "Midwest" : {
+                     "type" : "string"
+                  },
+                  "New England" : {
+                     "type" : "string"
+                  },
+                  "New York City" : {
+                     "type" : "string"
+                  },
+                  "Northern CA" : {
+                     "type" : "string"
+                  },
+                  "Northwest" : {
+                     "type" : "string"
+                  },
+                  "Southern CA" : {
+                     "type" : "string"
+                  },
+                  "Southwest" : {
+                     "type" : "string"
+                  }
+               },
+               "type" : "object"
+            },
+            "Natural Gas ($/millon Btu)" : {
+               "properties" : {
+                  "Houston" : {
+                     "type" : "string"
+                  },
+                  "Louisiana" : {
+                     "type" : "string"
+                  },
+                  "Mid-Atlantic" : {
+                     "type" : "string"
+                  },
+                  "Midwest" : {
+                     "type" : "string"
+                  },
+                  "New England" : {
+                     "type" : "string"
+                  },
+                  "New York City" : {
+                     "type" : "string"
+                  },
+                  "Northern CA" : {
+                     "type" : "string"
+                  },
+                  "Northwest" : {
+                     "type" : "string"
+                  },
+                  "Southern CA" : {
+                     "type" : "string"
+                  },
+                  "Southwest" : {
+                     "type" : "string"
+                  }
+               },
+               "type" : "object"
+            }
+         },
+         "type" : "object"
+      },
+   "required" : [
+      "Schema",
+      "Timestamp",
+      "Source",
+      "Date"
+   ],
+   "type" : "object"
+}
