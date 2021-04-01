@@ -4,3 +4,7 @@ mantis
 *.vkey
 *.skey.gpg
 tmp.json
+pinata.*
+rapidapi.*
+energy.json
+sofr*.json
