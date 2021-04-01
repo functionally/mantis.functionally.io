@@ -2,24 +2,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
   <head profile="http://www.w3.org/2005/10/profile">
   <link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico"/>
-    <title>Functional-Mantis Oracle on the Cardano Mainnet</title>
+  <link href="view.css" type="text/css" rel="stylesheet"/>
+  <title>Oracle “Functional” on the Cardano Mainnet</title>
   </head>
-  <body style="font-family:sans-serif">
-    <h1>Functional-Mantis Oracle on the Cardano Mainnet</h1>
-    <p>The Functional-Mantis oracle publishes to the <a style="text-decoration:none;color:darkblue" href="https://explorer.cardano.org/en">Cardano blockchain’s Mainnet</a>.
+  <body>
+    <h1>Oracle “Functional” on the Cardano Mainnet</h1>
+    <p>The oracle “Functional” publishes to the <a href="https://explorer.cardano.org/en">Cardano blockchain’s Mainnet</a>.
     <ul>
       <li>Metadata keys:<ul>
-        <li style="list-style-type:none">247427: <a style="text-decoration:none;color:darkblue" href="#sofr">Secured Overnight Financing (SOFR)</a></li>
-        <li style="list-style-type:none">247426: <a style="text-decoration:none;color:darkblue" href="#eia">Energy Prices</a></li>
+        <li class="mkey">247427: <a href="#sofr">Secured Overnight Financing (SOFR)</a></li>
+        <li class="mkey">247426: <a href="#eia">Energy Prices</a></li>
       </ul></li>
-      <li>Cardano address: <a style="text-decoration:none;color:darkblue" href="https://cardanoscan.io/address/010a11b0c7e25dc5d9c63171bdf39d9741b901dc903e12b4e162348e070cff2d99c693c4a7c787995a69262d796d8597a9b4b24e57d81cbe9f">addr1qy9prvx8ufwutkwxx9cmmuuajaqmjqwujqlp9d8pvg6gupcvluken35ncjnu0puetf5jvttedkze02d5kf890kquh60sut9jg7</a>.</li>
-      <li>Example transaction: <a style="text-decoration:none;color:darkblue" href="https://cardanoscan.io/transaction/04b928651688af488aeb4a64528c5d694ca6a9f2b541350fb05b1e1c11b8a445?tab=metadata">04b928651688af488aeb4a64528c5d694ca6a9f2b541350fb05b1e1c11b8a445</a>.</li>
+      <li>Cardano address: <a href="https://cardanoscan.io/address/010a11b0c7e25dc5d9c63171bdf39d9741b901dc903e12b4e162348e070cff2d99c693c4a7c787995a69262d796d8597a9b4b24e57d81cbe9f">addr1qy9prvx8ufwutkwxx9cmmuuajaqmjqwujqlp9d8pvg6gupcvluken35ncjnu0puetf5jvttedkze02d5kf890kquh60sut9jg7</a>.</li>
+      <li>Example transaction: <a href="https://cardanoscan.io/transaction/04b928651688af488aeb4a64528c5d694ca6a9f2b541350fb05b1e1c11b8a445?tab=metadata">04b928651688af488aeb4a64528c5d694ca6a9f2b541350fb05b1e1c11b8a445</a>.</li>
       <li>GraphQL query via cURL: <pre>curl 'https://graphql-api.mainnet.dandelion.link/' -H 'Content-Type: application/json' -H 'Accept: application/json' \
     --data-binary '{"query":"query fmMetadata{transactions(where:{metadata:{key:{_in:[\"247426\",\"247427\"]}}}){metadata{key value}}}"}'</pre></li>
-      <li>Oracle metadata: <a style="text-decoration:none;color:darkblue" href="mantis.metadata.json">[JSON]</a> <a style="text-decoration:none;color:darkblue" href="mantis.metadata.hash">[hash]</a> <a style="text-decoration:none;color:darkblue" href="https://adaex.org/18a3e4d157fc704a82f2c7aa546357f6e8591c2dd51df27e730579ce269f1603">[txn]</a>.</li>
-      <li>Source code: <a style="text-decoration:none;color:darkblue" href="https://github.com/functionally/mantis.functionally.io/blob/main/ReadMe.md">https://github.com/functionally/mantis.functionally.io/</a>.</li>
+      <li>Oracle metadata: <a href="mantis.metadata.json">[JSON]</a> <a href="mantis.metadata.hash">[hash]</a> <a href="https://adaex.org/18a3e4d157fc704a82f2c7aa546357f6e8591c2dd51df27e730579ce269f1603">[txn]</a>.</li>
+      <li>Source code: <a href="https://github.com/functionally/mantis.functionally.io/blob/main/ReadMe.md">https://github.com/functionally/mantis.functionally.io/</a>.</li>
       <li>This service runs so long as the aforementioned address has a balance of at least 2 ADA; each transaction has a net cost of approximately 0.265 ADA.</li>
-      <li>Contact: <a style="text-decoration:none;color:darkblue" href="mailto:mantis@functionally.io">mantis@functionally.io</a>.</li>
+      <li>Contact: <a href="mailto:mantis@functionally.io">mantis@functionally.io</a>.</li>
     </ul>
     <hr/>
     <h2 id="sofr">Secured Overnight Financing (SOFR)</h2>
@@ -32,8 +33,8 @@
     <h3>Technical Details</h3>
     <ul>
       <li>Transaction metadata key: 247427.</li>
-      <li>Data source: <a style="text-decoration:none;color:darkblue" href="https://apps.newyorkfed.org/markets/autorates/SOFR">Federal Reserve Bank of New York Secured Overnight Financing Rate Data</a>.</li>
-      <li>Data archived in IPFS: <a style="text-decoration:none;color:darkblue" href="https://gateway.pinata.cloud/ipns/12D3KooWCnmRPTgWcGSNUMPfYjyMVYtcrZpLp75Su1Hs7gUN9xs1/json">[JSON]</a>.</li>
+      <li>Data source: <a href="https://apps.newyorkfed.org/markets/autorates/SOFR">Federal Reserve Bank of New York Secured Overnight Financing Rate Data</a>.</li>
+      <li>Data archived in IPFS: <a href="https://gateway.pinata.cloud/ipns/12D3KooWCnmRPTgWcGSNUMPfYjyMVYtcrZpLp75Su1Hs7gUN9xs1/json">[JSON]</a>.</li>
     </ul>
     <hr/>
     <h2 id="eia">Energy Prices</h2>
@@ -48,40 +49,40 @@
       </thead>
       <tbody>
         <tr>
-          <td style="vertical-align:top;padding:10px">
-            <p style="font-style:italic;margin-block-end:-10px">Crude Oil ($/barrel)</p>
+          <td>
+            <p>Crude Oil ($/barrel)</p>
             <ul>
               <li>Brent</li>
               <li>Louisiana Light</li>
               <li>WTI</li>
             </ul>
-            <p style="font-style:italic;margin-block-end:-10px">Gasoline (RBOB) ($/gallon)</p>
+            <p>Gasoline (RBOB) ($/gallon)</p>
             <ul>
               <li>Gulf Coast</li>
               <li>Los Angeles</li>
               <li>NY Harbor</li>
             </ul>
           </td>
-          <td style="vertical-align:top;padding:10px">
-            <p style="font-style:italic;margin-block-end:-10px">Heating Oil ($/gallon)</p>
+          <td>
+            <p>Heating Oil ($/gallon)</p>
             <ul>
               <li>Gulf Coast</li>
               <li>NY Harbor</li>
             </ul>
-            <p style="font-style:italic;margin-block-end:-10px">Low-Sulfur Diesel ($/gallon)</p>
+            <p>Low-Sulfur Diesel ($/gallon)</p>
             <ul>
               <li>Gulf Coast</li>
               <li>Los Angeles</li>
               <li>NY Harbor</li>
             </ul>
-            <p style="font-style:italic;margin-block-end:-10px">Propane ($/gallon)</p>
+            <p>Propane ($/gallon)</p>
             <ul>
               <li>Conway, KS</li>
               <li>Mont Belvieu, TX</li>
             </ul>
           </td>
-          <td style="vertical-align:top;padding:10px">
-            <p style="font-style:italic;margin-block-end:-10px">Electricity ($/MWh)</p>
+          <td>
+            <p>Electricity ($/MWh)</p>
             <ul>
               <li>Houston</li>
               <li>Louisiana</li>
@@ -95,8 +96,8 @@
               <li>Southwest</li>
             </ul>
           </td>
-          <td style="vertical-align:top;padding:10px">
-            <p style="font-style:italic;margin-block-end:-10px">Natural Gas ($/millon Btu)</p>
+          <td>
+            <p>Natural Gas ($/millon Btu)</p>
             <ul>
               <li>Houston</li>
               <li>Louisiana</li>
@@ -116,8 +117,8 @@
     <h3>Technical Details</h3>
     <ul>
       <li>Transaction metadata key: 247426.</li>
-      <li>Data source: <a style="text-decoration:none;color:darkblue" href="https://www.eia.gov/todayinenergy/prices.php">US Energy Information Administration, Today in Energy, Daily Prices</a>.</li>
-      <li>Data archived in IPFS: <a style="text-decoration:none;color:darkblue" href="https://gateway.pinata.cloud/ipns/12D3KooWCnmRPTgWcGSNUMPfYjyMVYtcrZpLp75Su1Hs7gUN9xs1/raw">[HTML]</a> <a style="text-decoration:none;color:darkblue" href="https://gateway.pinata.cloud/ipns/12D3KooWCnmRPTgWcGSNUMPfYjyMVYtcrZpLp75Su1Hs7gUN9xs1/json">[JSON]</a>.</li>
+      <li>Data source: <a href="https://www.eia.gov/todayinenergy/prices.php">US Energy Information Administration, Today in Energy, Daily Prices</a>.</li>
+      <li>Data archived in IPFS: <a href="https://gateway.pinata.cloud/ipns/12D3KooWCnmRPTgWcGSNUMPfYjyMVYtcrZpLp75Su1Hs7gUN9xs1/raw">[HTML]</a> <a href="https://gateway.pinata.cloud/ipns/12D3KooWCnmRPTgWcGSNUMPfYjyMVYtcrZpLp75Su1Hs7gUN9xs1/json">[JSON]</a>.</li>
     </ul>
     <hr/>
   </body>

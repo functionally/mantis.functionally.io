@@ -1,0 +1,22 @@
+body {
+  font-family: sans-serif
+}
+
+a {
+  text-decoration: none
+; color          :darkblue
+}
+
+td {
+  vertical-align: top
+; padding       : 10px
+}
+
+td p {
+  font-style      : italic
+; margin-block-end:-10px
+}
+
+.mkey {
+  list-style-type: none
+}
