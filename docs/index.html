@@ -14,17 +14,17 @@
         <li class="mkey">247426: <a href="#eia">Energy Prices</a></li>
       </ul></li>
       <li>Cardano address: <a href="https://cardanoscan.io/address/010a11b0c7e25dc5d9c63171bdf39d9741b901dc903e12b4e162348e070cff2d99c693c4a7c787995a69262d796d8597a9b4b24e57d81cbe9f">addr1qy9prvx8ufwutkwxx9cmmuuajaqmjqwujqlp9d8pvg6gupcvluken35ncjnu0puetf5jvttedkze02d5kf890kquh60sut9jg7</a>.</li>
-      <li>Example transaction: <a href="https://cardanoscan.io/transaction/04b928651688af488aeb4a64528c5d694ca6a9f2b541350fb05b1e1c11b8a445?tab=metadata">04b928651688af488aeb4a64528c5d694ca6a9f2b541350fb05b1e1c11b8a445</a>.</li>
+      <li>Example transaction: <a href="https://cardanoscan.io/transaction/919692a37ee31d65de4b7e16b30fefefb5e298ce25aee7e41b7424c56c8b4d48?tab=metadata">919692a37ee31d65de4b7e16b30fefefb5e298ce25aee7e41b7424c56c8b4d48</a>.</li>
       <li>GraphQL query via cURL: <pre>curl 'https://graphql-api.mainnet.dandelion.link/' -H 'Content-Type: application/json' -H 'Accept: application/json' \
     --data-binary '{"query":"query fmMetadata{transactions(where:{metadata:{key:{_in:[\"247426\",\"247427\"]}}}){metadata{key value}}}"}'</pre></li>
       <li>Oracle metadata: <a href="mantis.metadata.json">[JSON]</a> <a href="mantis.metadata.hash">[hash]</a> <a href="https://adaex.org/ab6fb8c954c99a54f1c2f76f07000de9dd798209609e20a00c34eb5aa7149ca5">[txn]</a>.</li>
       <li>Source code: <a href="https://github.com/functionally/mantis.functionally.io/blob/main/ReadMe.md">https://github.com/functionally/mantis.functionally.io/</a>.</li>
-      <li>This service runs so long as the aforementioned address has a balance of at least 2 ADA; each transaction has a net cost of approximately 0.265 ADA.</li>
+      <li>This service runs so long as the aforementioned address has a balance of at least 2 ADA; each transaction has a net cost of approximately 0.27 ADA.</li>
       <li>Contact: <a href="mailto:mantis@functionally.io">mantis@functionally.io</a>.</li>
     </ul>
     <hr/>
     <h2 id="sofr">Secured Overnight Financing (SOFR)</h2>
-    <p>This oracle publishes the secured overnight financing (SOFR) rate each weekday, obtained from the US Federal Reserve.</p>
+    <p>This oracle publishes the secured overnight financing (SOFR) rate each weekday, with spot rates for the US Federal Reserve, and futures rates for the CME.</p>
     <h3>Datapoints</h3>
     <table summary="Datapoints">
       <thead>
@@ -45,7 +45,7 @@
             <ul>
               <li>Contract Month</li>
               <li>Settlement Date</li>
-              <li>Opening Quote: 100 minus rate</li>
+              <li>Opening Quote: 100 minus percent rate</li>
             </ul>
           </td>
         </tr>

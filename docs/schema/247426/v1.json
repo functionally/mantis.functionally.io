@@ -5,6 +5,9 @@
       "Schema" : {
          "const" : "https://mantis.functionally.io/schema/247426/v1.json"
       },
+      "Processor": {
+         "const" : "https://mantis.functionally.io/mantis.metadata.json"
+      },
       "Timestamp" : {
          "type" : "string",
          "format" : "date-time"
