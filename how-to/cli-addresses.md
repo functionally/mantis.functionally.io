@@ -3,7 +3,7 @@ title: How to Generate Cardano Payment and Stake Keys from a Trezor Model T Seed
 ---
 
 
-Here is a recipe for recovering payment and stake keys if a [Trezor Model T](https://trezor.io/) is lost or damaged and a new Trezor Model T is not available. (Note that performing this procedure defeats the purpose of using a hardware wallet, however, since it involves typing seed phrases on a computer.) This procedure also works for seed phrases from [Daedalus wallets](https://daedaluswallet.io/) and perhaps also for those from [Yoroi wallets](https://yoroi-wallet.com/). *Always use best practices (e.g., a well-secured air-gapped computer) for working securely with seed phrases and for generating private/secret key files.*
+Here is a recipe for recovering payment and stake keys if a [Trezor Model T](https://trezor.io/) is lost or damaged and a new Trezor Model T is not available. (Note that performing this procedure defeats the purpose of using a hardware wallet, however, since it involves typing seed phrases on a computer.) This procedure also works for seed phrases from [Daedalus wallets](https://daedaluswallet.io/) and perhaps also for those from [Yoroi wallets](https://yoroi-wallet.com/); it does not work with the [Ledger Nano X](https://shop.ledger.com/products/ledger-nano-xu)--see [this Reddit comment](https://www.reddit.com/r/cardano/comments/f6ugn3/15_word_wallet_restoration/fi7fue6?utm_source=share&utm_medium=web2x&context=3) for an indication that the mnemonics differ between Ledger and Daedalus. *Always use best practices (e.g., a well-secured air-gapped computer) for working securely with seed phrases and for generating private/secret key files.*
 
 
 ## Prerequisites
@@ -48,10 +48,10 @@ The procedure for generating the stake key is similar to that for the payment ke
 	cardano-wallet key public --without-chain-code < $BASENAME.stake.prv > $BASENAME.stake.pub
 	
 	cardano-cli key convert-cardano-address-key --shelley-payment-key \
-	                                            --signing-key-file $BASENAME.staking.prv \
-	                                            --out-file $BASENAME.staking.skey
-	cardano-cli key verification-key --signing-key-file $BASENAME.staking.skey \
-	                                 --verification-key-file $BASENAME.staking.vkey
+	                                            --signing-key-file $BASENAME.stake.prv \
+	                                            --out-file $BASENAME.stake.skey
+	cardano-cli key verification-key --signing-key-file $BASENAME.stake.skey \
+	                                 --verification-key-file $BASENAME.stake.vkey
 
 
 ## Generate addresses.
@@ -60,7 +60,7 @@ The each payment address is computed from the corresponding payment key and from
 
 	cardano-cli address build --mainnet \
 	                          --payment-verification-key $(cat $BASENAME.payment-0.pub) \
-	                          --stake-verification-key $(cat $BASENAME.staking.pub) \
+	                          --stake-verification-key $(cat $BASENAME.stake.pub) \
 	                          --out-file $BASENAME.payment-0.address
 
 These addresses should match those of the original wallet.
