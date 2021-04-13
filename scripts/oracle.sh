@@ -59,4 +59,4 @@ NETWORK=mainnet
 
 export CARDANO_NODE_SOCKET_PATH=$HOME/.local/share/Daedalus/$NETWORK/cardano-node.socket
 
-gpg -d payment.skey.gpg | ./mantis $NETWORK.mantis --metadata $JSON
+gpg -d payment.skey.gpg | ./mantis transact $NETWORK.mantis --metadata $JSON
