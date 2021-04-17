@@ -41,7 +41,8 @@ Examples on Testnet
 *   [Transactions](https://explorer.cardano-testnet.iohkdev.io/en/address?address=addr_test1zzcg5w7rmwug9rm80u49mds4jyafp6dqf29w2ajtk2dueusvluken35ncjnu0puetf5jvttedkze02d5kf890kquh60sl6mrts).
 *   [Artifacts](short/)
 *   Query to demonstration staking:
-        $ curl -H 'project_id: ...' \ https://cardano-testnet.blockfrost.io/api/v0/addresses/addr_test1zzcg5w7rmwug9rm80u49mds4jyafp6dqf29w2ajtk2dueusvluken35ncjnu0puetf5jvttedkze02d5kf890kquh60sl6mrts | json_pp
+
+        $ curl -H 'project_id: ...' https://cardano-testnet.blockfrost.io/api/v0/addresses/addr_test1zzcg5w7rmwug9rm80u49mds4jyafp6dqf29w2ajtk2dueusvluken35ncjnu0puetf5jvttedkze02d5kf890kquh60sl6mrts | json_pp
         {
            "stake_address" : "stake_test1uqx07tvec6fuff78s7v456fx94ukmpvh4x6tynjhmqwta8cg0kx6f",
            "type" : "shelley",
@@ -55,6 +56,7 @@ Examples on Testnet
 *   [Transactions](https://explorer.cardano-testnet.iohkdev.io/en/address.html?address=addr_test1zq92c9jzqnlxj9ys7erk06lw8m826cj3xhekv6c48qp3trsvluken35ncjnu0puetf5jvttedkze02d5kf890kquh60schyyfn).
 *   [Artifacts](long/)
 *   Query to demonstration staking:
+
         $ curl -H 'project_id: ...' https://cardano-testnet.blockfrost.io/api/v0/addresses/addr_test1zq92c9jzqnlxj9ys7erk06lw8m826cj3xhekv6c48qp3trsvluken35ncjnu0puetf5jvttedkze02d5kf890kquh60schyyfn | json_pp
         {
            "stake_address" : "stake_test1uqx07tvec6fuff78s7v456fx94ukmpvh4x6tynjhmqwta8cg0kx6f",
