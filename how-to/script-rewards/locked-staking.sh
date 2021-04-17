@@ -53,7 +53,7 @@ cardano-cli address key-gen \
 # submitted in a transaction to the network. Otherwise,
 # no rewards will be received!
 
-STAKE_ADDR=stake1uyx07tvec6fuff78s7v456fx94ukmpvh4x6tynjhmqwta8c09uy75
+STAKE_ADDR=stake_test1uqx07tvec6fuff78s7v456fx94ukmpvh4x6tynjhmqwta8cg0kx6f
 
 
 # Because we want to prevent the funds from being
