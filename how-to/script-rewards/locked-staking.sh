@@ -249,3 +249,11 @@ cardano-cli transaction sign $CLI_MAGIC \
 
 cardano-cli transaction submit $CLI_MAGIC \
   --tx-file tx-final.signed
+
+
+# The funds have now left the script address.
+
+cardano-cli query utxo $CLI_MAGIC --mary-era \
+  --address $SCRIPT_ADDR
+#                            TxHash                                TxIx Amount
+# -----------------------------------------------------------------------------------------
