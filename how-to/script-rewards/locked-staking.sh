@@ -212,6 +212,18 @@ cardano-cli query utxo $CLI_MAGIC --mary-era \
 SCRIPT_UTXO='e591aa4f83ba959051c05cd035e0351fb75eff0abc1dda6c00dc8c229986c8b5#0'
 
 
+# One can query Blockfrost.io to see that staking is occuring:
+
+curl -H "project_id: $PROJECT_ID" \
+  https://cardano-testnet.blockfrost.io/api/v0/addresses/$SCRIPT_ADDR \
+  | json_pp
+# {
+#    "stake_address" : "stake_test1uqx07tvec6fuff78s7v456fx94ukmpvh4x6tynjhmqwta8cg0kx6f",
+#    "type" : "shelley",
+#    . . .
+# }
+
+
 # We can build the transaction for the investor to redeem the
 # funds from the script. It is signed with the redemption key
 # but sent to an address in the investor's wallet.
