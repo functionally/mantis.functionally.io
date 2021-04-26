@@ -2,7 +2,7 @@
 #!nix-shell -I nixpkgs=https://github.com/NixOS/nixpkgs/archive/bc260badaebf67442befe20fb443034d3a91f2b3.tar.gz
 #!nix-shell -i bash -p html-tidy saxonb jq
 
-set -e
+set -ex
 
 export IPFS_PATH=/data/ipfs/repo
 
@@ -59,4 +59,12 @@ NETWORK=mainnet
 
 export CARDANO_NODE_SOCKET_PATH=$HOME/.local/share/Daedalus/$NETWORK/cardano-node.socket
 
-gpg -d payment.skey.gpg | ./mantis transact $NETWORK.mantis --metadata $JSON
+if [ ! -e payment.skey ]
+then
+  mkfifo payment.skey
+fi
+gpg --pinentry loopback --decrypt payment.skey.gpg > payment.skey &
+
+./mantis transact $NETWORK.mantis --metadata $JSON
+
+wait
