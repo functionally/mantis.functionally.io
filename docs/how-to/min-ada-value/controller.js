@@ -34,6 +34,8 @@ function recalculate() {
     setValue(sumAssetNameLengths, 0)
   }
   if (getValue(numPIDs) > 0) {
+    if (getValue(numAssets) == 0 && getValue(sumAssetNameLengths) > 0)
+      setValue(numAssets, 1)
     setValue(
       size,
        6 +
