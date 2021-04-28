@@ -17,3 +17,5 @@ Miscellaneous Notes on Cardano
 *   [How to generate Cardano payment and stake keys from a Trezor Model T or Daedalus seed phrase](how-to/cli-addresses.md).
 *   [Novel use cases for staking](how-to/stake-use-cases.md).
 *   [Locking ADA for staking](how-to/script-rewards/ReadMe.md).
+*   [Token minting metadata statistics](how-to/token-metadata-statistics.md)
+*   [Online min-ADA calculator](https://mantis.functionally.io/how-to/min-ada-value/)
