@@ -15,8 +15,11 @@ input {
   text-align: right
 }
 
-td {
-  width: 33%
+@media screen and (max-width: 650px) {
+  tbody {
+    min-width: 100%
+  ; font-size: smaller
+  }
 }
 
 body {
