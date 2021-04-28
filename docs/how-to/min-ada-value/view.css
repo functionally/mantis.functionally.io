@@ -7,8 +7,16 @@ label {
   font-family: monospace
 }
 
+input:disabled {
+  color: black
+}
+
 input {
   text-align: right
+}
+
+td {
+  width: 33%
 }
 
 body {
