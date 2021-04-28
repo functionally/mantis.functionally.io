@@ -1,0 +1,16 @@
+.section {
+  font-weight: bold
+; padding-top: 1em
+}
+
+label {
+  font-family: monospace
+}
+
+input {
+  text-align: right
+}
+
+body {
+  font-family: sans-serif
+}

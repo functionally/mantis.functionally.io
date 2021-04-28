@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+  <head profile="http://www.w3.org/2005/10/profile">
+    <link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico"/>
+    <link href="view.css" type="text/css" rel="stylesheet"/>
+    <script src="controller.js" type="application/javascript"> </script>
+    <title>Minimum ADA for Token Bundles</title>
+  </head>
+  <body onload="recalculate()">
+    <h1>Minimum ADA for Token Bundles</h1>
+    <form>
+      <table>
+        <tbody>
+          <tr>
+            <td class="section" colspan="4">Fixed parameters</td>
+          </tr>
+          <tr>
+            <td>Minimum UTxO Value</td>
+            <td>
+              <label for="minUTxOValue">minUTxOValue</label>
+            </td>
+            <td>
+              <input id="minUTxOValue" type="number" min="0" value="1.000000" onchange="recalculate()" onkeydown="recalculate()"/>
+            </td>
+            <td>ADA</td>
+          </tr>
+          <tr>
+            <td>Policy ID size</td>
+            <td>
+              <label for="pidSize">pidSize</label>
+            </td>
+            <td>
+              <input id="pidSize" type="number" min="0" value="28" onchange="recalculate()" onkeydown="recalculate()"/>
+            </td>
+            <td>B</td>
+          </tr>
+          <tr>
+            <td>Coin size</td>
+            <td>
+              <label for="coinSize">coinSize</label>
+            </td>
+            <td>
+              <input id="coinSize" type="number" min="0" value="2" onchange="recalculate()" onkeydown="recalculate()"/>
+            </td>
+            <td>B</td>
+          </tr>
+          <tr>
+            <td>UTxO size without any value</td>
+            <td>
+              <label for="utxoEntrySizeWithoutVal">utxoEntrySizeWithoutVal</label>
+            </td>
+            <td>
+              <input id="utxoEntrySizeWithoutVal" type="number" min="0" value="27" onchange="recalculate()" onkeydown="recalculate()"/>
+            </td>
+            <td>B</td>
+          </tr>
+          <tr>
+            <td>UTxO size with ADA only</td>
+            <td>
+              <label for="adaOnlyUTxOSize">adaOnlyUTxOSize</label>
+            </td>
+            <td>
+              <input id="adaOnlyUTxOSize" type="number" value="0" disabled="true"/>
+            </td>
+            <td>B</td>
+          </tr>
+          <tr>
+            <td class="section" colspan="3">Properties of the transaction</td>
+          </tr>
+          <tr>
+            <td>Number of distinct policy IDs</td>
+            <td>
+              <label for="numPIDs">numPIDs</label>
+            </td>
+            <td>
+              <input id="numPIDs" type="number" min="0" value="1" onchange="recalculate()" onkeydown="recalculate()"/>
+            </td>
+            <td/>
+          </tr>
+          <tr>
+            <td>Number of distinct asset IDs</td>
+            <td>
+              <label for="numAssets">numAssets</label>
+            </td>
+            <td>
+              <input id="numAssets" type="number" min="0" value="1" onchange="recalculate()" onkeydown="recalculate()"/>
+            </td>
+            <td/>
+          </tr>
+          <tr>
+            <td>Total bytestring length of asset names</td>
+            <td>
+              <label for="sumAssetNameLengths">sumAssetNameLengths</label>
+            </td>
+            <td>
+              <input id="sumAssetNameLengths" type="number" min="0" value="32" onchange="recalculate()" onkeydown="recalculate()"/>
+            </td>
+            <td>B</td>
+          </tr>
+          <tr>
+            <td class="section" colspan="3">Results</td>
+          </tr>
+          <tr>
+            <td>Size of token bundle</td>
+            <td>
+              <label for="size">size</label>
+            </td>
+            <td>
+              <input id="size" type="number" min="0" value="0" disabled="true"/>
+            </td>
+            <td>B</td>
+          </tr>
+          <tr>
+            <td>Minimum ADA for transaction</td>
+            <td>
+              <label for="minAda">minAda</label>
+            </td>
+            <td>
+              <input id="minAda" type="number" min="0" value="0" disabled="true"/>
+            </td>
+            <td>ADA</td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+    <p>See the <a href="https://cardano-ledger.readthedocs.io/en/latest/explanations/min-utxo.html">Min-Ada-Value Requirement</a> for details.</p>
+  </body>
+</html>

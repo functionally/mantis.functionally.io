@@ -5,6 +5,7 @@ Miscellaneous Notes on Cardano
 *   [Novel use cases for staking](stake-use-cases.md).
 *   [Locking ADA for staking](script-rewards/ReadMe.md).
 *   [Token minting metadata statistics](token-metadata-statistics.md)
+*   [Online min-ADA calculator](https://mantis.functionally.io/how-to/min-ada-value/)
 
 
 Projects
