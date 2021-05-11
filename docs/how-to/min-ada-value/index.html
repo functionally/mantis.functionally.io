@@ -14,7 +14,8 @@
         <tbody>
           <tr>
             <td class="section" colspan="4">Fixed parameters</td>
-          </tr>
+            <td class="section"><em>The following parameters affect the min-ADA computation, but are universal for all tokens. Protocol changes could alter these in the future, and  you can experiment with the implications of those changes here.</em></td>
+          </td>
           <tr>
             <td>Minimum UTxO Value</td>
             <td>
@@ -24,6 +25,7 @@
               <input id="minUTxOValue" type="number" min="0" value="1.000000" onkeydown="recalculate()" oninput="recalculate()"/>
             </td>
             <td>ADA</td>
+            <td><em>The minimum number of ADA that must be present in ADA-only UTxOs.</em></td>
           </tr>
           <tr>
             <td>Policy ID size</td>
@@ -33,7 +35,8 @@
             <td>
               <input id="pidSize" type="number" min="0" value="28" onkeydown="recalculate()" oninput="recalculate()"/>
             </td>
-            <td>B</td>
+            <td>Bytes</td>
+            <td><em>The number of bytes in a policy ID.</em></td>
           </tr>
           <tr>
             <td>Coin size</td>
@@ -41,9 +44,10 @@
               <label for="coinSize">coinSize</label>
             </td>
             <td>
-              <input id="coinSize" type="number" min="0" value="2" onkeydown="recalculate()" oninput="recalculate()"/>
+              <input id="coinSize" type="number" min="0" value="0" onkeydown="recalculate()" oninput="recalculate()"/>
             </td>
-            <td>B</td>
+            <td>Bytes</td>
+            <td><em>According to <a href="https://cardano-ledger.readthedocs.io/en/latest/explanations/min-utxo.html">Min-Ada-Value Requirement</a>, this parameter will be corrected to be 2 "in the next fork" because the value 0 was an implementation error.</em></td> 
           </tr>
           <tr>
             <td>UTxO size without any value</td>
@@ -53,7 +57,8 @@
             <td>
               <input id="utxoEntrySizeWithoutVal" type="number" min="0" value="27" onkeydown="recalculate()" oninput="recalculate()"/>
             </td>
-            <td>B</td>
+            <td>Bytes</td>
+            <td><em>The number of bytes in a transaction if there were no value at all in it.</em></td>
           </tr>
           <tr>
             <td>UTxO size with ADA only</td>
@@ -63,10 +68,12 @@
             <td>
               <input id="adaOnlyUTxOSize" type="number" value="0" disabled="true"/>
             </td>
-            <td>B</td>
+            <td>Bytes</td>
+            <td><em>The number of bytes in a transaction if it were to only contain ADA.</em></td>
           </tr>
           <tr>
-            <td class="section" colspan="3">Properties of the transaction</td>
+            <td class="section" colspan="4">Properties of the transaction</td>
+            <td class="section"><em>These parameters describe collection ("bundle") of tokens in the UTxO.</em></td>
           </tr>
           <tr>
             <td>Number of distinct policy IDs</td>
@@ -77,6 +84,7 @@
               <input id="numPIDs" type="number" min="0" value="1" onkeydown="recalculate()" oninput="recalculate()"/>
             </td>
             <td/>
+            <td><em>The number of policy scripts referenced in the UTxO. If there is only one type of token in the UTxO, then this is just 1.</em></td>
           </tr>
           <tr>
             <td>Number of distinct asset IDs</td>
@@ -87,20 +95,23 @@
               <input id="numAssets" type="number" min="0" value="1" onkeydown="recalculate()" oninput="recalculate()"/>
             </td>
             <td/>
+            <td><em>The number of asset names present in the UTxO. If there is only one type of token, then this is just 1.</em></td>
           </tr>
           <tr>
-            <td>Total bytestring length of asset names</td>
+            <td>Total byte length of asset names</td>
             <td>
               <label for="sumAssetNameLengths">sumAssetNameLengths</label>
             </td>
             <td>
               <input id="sumAssetNameLengths" type="number" min="0" value="32" onkeydown="recalculate()" oninput="recalculate()"/>
             </td>
-            <td>B</td>
+            <td>Bytes</td>
+            <td><em>The number of bytes need to store all of the asset names. If these do not include unicode characters (e.g., emojis), then this is just the total number of letters (characters) in the asset names. For instance, a token named "Test" needs 4 bytes for its name.</em></td>
           </tr>
           <tr>
-            <td class="section" colspan="3">Results</td>
-          </tr>
+            <td class="section" colspan="4">Results</td>
+            <td class="section"><em>These results can be used for constructing transactions under the transaction size limit and with the proper minimum ADA.</em></td>
+          </td>
           <tr>
             <td>Size of token bundle</td>
             <td>
@@ -109,7 +120,8 @@
             <td>
               <input id="size" type="number" min="0" value="0" disabled="true"/>
             </td>
-            <td>B</td>
+            <td>Words</td>
+            <td><em>The number of 8-byte words required to store the collection of tokens in the transaction. Currently, transactions are limited to 16,384 bytes (= 2048 words).</em></td>
           </tr>
           <tr>
             <td>Minimum ADA for transaction</td>
@@ -120,11 +132,101 @@
               <input id="minAda" type="number" min="0" value="0" disabled="true"/>
             </td>
             <td>ADA</td>
+            <td><em>The minimum number of ADA that must be present in the UTxO.</em></td>
           </tr>
         </tbody>
       </table>
     </form>
-    <p>See the <a href="https://cardano-ledger.readthedocs.io/en/latest/explanations/min-utxo.html">Min-Ada-Value Requirement</a> for details.</p>
+    <p>See the <a href="https://cardano-ledger.readthedocs.io/en/latest/explanations/min-utxo.html">Min-Ada-Value Requirement</a> for details of the computations.</p>
+    <hr/>
+    <h2>Examples</h2>
+    <h3>Single Token Named "Test"</h3>
+    <table>
+      <tbody>
+        <tr>
+          <td><em>There is only one minting policy script, and only one asset name. The asset name "Test" has four ASCII characters and comprises 4 bytes.</em></td>
+        </tr>
+        <tr>
+          <td class="section">Properties of the transaction</td>
+        </tr>
+        <tr>
+          <td>Number of distinct policy IDs: <code>1</code></td>
+        </tr>
+        <tr>
+          <td>Number of distinct asset IDs: <code>1</code></td>
+        </tr>
+        <tr>
+          <td>Total bytestring length of asset names: <code>4 Bytes</code></td>
+        </tr>
+        <tr>
+          <td class="section">Results</td>
+        </td>
+        <tr>
+          <td>Size of token bundle: <code>12 Words</code></td>
+        </tr>
+        <tr>
+          <td>Minimum ADA for transaction: <code>1.444443 ADA</code></td>
+        </tr>
+      </tbody>
+    </table>
+    <h3>One Policy and Two Tokens Named "Test" and "Example"</h3>
+    <table>
+      <tbody>
+        <tr>
+          <td><em>There is only one minting policy script, but there are two asset names. The asset name "Test" has four letters and comprises 4 bytes; the asset name "Example" has seven letters and comprises 7 bytes. Thus, 4 + 7 = 11 bytes are required to store the asset names.</em></td>
+        </tr>
+        <tr>
+          <td class="section">Properties of the transaction</td>
+        </tr>
+        <tr>
+          <td>Number of distinct policy IDs: <code>1</code></td>
+        </tr>
+        <tr>
+          <td>Number of distinct asset IDs: <code>2</code></td>
+        </tr>
+        <tr>
+          <td>Total bytestring length of asset names: <code>11 Bytes</code></td>
+        </tr>
+        <tr>
+          <td class="section">Results</td>
+        </td>
+        <tr>
+          <td>Size of token bundle: <code>14 Words</code></td>
+        </tr>
+        <tr>
+          <td>Minimum ADA for transaction: <code>1.518517 ADA</code></td>
+        </tr>
+      </tbody>
+    </table>
+    <h3>One Policy with a Token Named "Test" and Another Policy with a Token Named "Example"</h3>
+    <table>
+      <tbody>
+        <tr>
+          <td><em>There are two minting policy scripts, and there are two asset names. The asset name "Test" has four letters and comprises 4 bytes; the asset name "Example" has seven letters and comprises 7 bytes. Thus, 4 + 7 = 11 bytes are required to store the asset names.</em></td>
+        </tr>
+        <tr>
+          <td class="section">Properties of the transaction</td>
+        </tr>
+        <tr>
+          <td>Number of distinct policy IDs: <code>2</code></td>
+        </tr>
+        <tr>
+          <td>Number of distinct asset IDs: <code>2</code></td>
+        </tr>
+        <tr>
+          <td>Total bytestring length of asset names: <code>11 Bytes</code></td>
+        </tr>
+        <tr>
+          <td class="section">Results</td>
+        </td>
+        <tr>
+          <td>Size of token bundle: <code>18 Words</code></td>
+        </tr>
+        <tr>
+          <td>Minimum ADA for transaction: <code>1.666665</code></td>
+        </tr>
+      </tbody>
+    </table>
     <hr/>
     <p>Contact: <a href="mailto:mantis@functionally.io">mantis@functionally.io</a>.</p>
   </body>
