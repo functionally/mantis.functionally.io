@@ -11,8 +11,25 @@ input:disabled {
   color: black
 }
 
+input[type=number] {
+  width: 8em
+}
+
 input {
   text-align: right
+}
+
+form table tbody tr td:nth-child(2) {
+  display: none
+}
+
+form table tbody tr td:last-child {
+  white-space: break-spaces
+; font-family: serif
+}
+
+form table tbody tr {
+ white-space: nowrap
 }
 
 @media screen and (max-width: 650px) {
