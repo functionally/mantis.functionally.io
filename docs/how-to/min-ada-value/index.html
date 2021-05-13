@@ -9,13 +9,14 @@
   </head>
   <body onload="recalculate()">
     <h1>Minimum ADA for Token Bundles</h1>
+    <p>See the <a href="https://cardano-ledger.readthedocs.io/en/latest/explanations/min-utxo.html">Min-Ada-Value Requirement</a> for details of these computations.</p>
     <form>
       <table>
         <tbody>
           <tr>
             <td class="section" colspan="4">Fixed parameters</td>
             <td class="section"><em>The following parameters affect the min-ADA computation, but are universal for all tokens. Protocol changes could alter these in the future, and  you can experiment with the implications of those changes here.</em></td>
-          </td>
+          </tr>
           <tr>
             <td>Minimum UTxO Value</td>
             <td>
@@ -81,7 +82,7 @@
               <label for="numPIDs">numPIDs</label>
             </td>
             <td>
-              <input id="numPIDs" type="number" min="0" value="1" onkeydown="recalculate()" oninput="recalculate()"/>
+              <input id="numPIDs" class="emphasize" type="number" min="0" value="1" onkeydown="recalculate()" oninput="recalculate()"/>
             </td>
             <td/>
             <td><em>The number of policy scripts referenced in the UTxO. If there is only one type of token in the UTxO, then this is just 1.</em></td>
@@ -92,7 +93,7 @@
               <label for="numAssets">numAssets</label>
             </td>
             <td>
-              <input id="numAssets" type="number" min="0" value="1" onkeydown="recalculate()" oninput="recalculate()"/>
+              <input id="numAssets" class="emphasize" type="number" min="0" value="1" onkeydown="recalculate()" oninput="recalculate()"/>
             </td>
             <td/>
             <td><em>The number of asset names present in the UTxO. If there is only one type of token, then this is just 1.</em></td>
@@ -103,7 +104,7 @@
               <label for="sumAssetNameLengths">sumAssetNameLengths</label>
             </td>
             <td>
-              <input id="sumAssetNameLengths" type="number" min="0" value="32" onkeydown="recalculate()" oninput="recalculate()"/>
+              <input id="sumAssetNameLengths" class="emphasize" type="number" min="0" value="32" onkeydown="recalculate()" oninput="recalculate()"/>
             </td>
             <td>Bytes</td>
             <td><em>The number of bytes need to store all of the asset names. If these do not include unicode characters (e.g., emojis), then this is just the total number of letters (characters) in the asset names. For instance, a token named "Test" needs 4 bytes for its name.</em></td>
@@ -111,7 +112,7 @@
           <tr>
             <td class="section" colspan="4">Results</td>
             <td class="section"><em>These results can be used for constructing transactions under the transaction size limit and with the proper minimum ADA.</em></td>
-          </td>
+          </tr>
           <tr>
             <td>Size of token bundle</td>
             <td>
@@ -129,7 +130,7 @@
               <label for="minAda">minAda</label>
             </td>
             <td>
-              <input id="minAda" type="number" min="0" value="0" disabled="true"/>
+              <input id="minAda" class="emphasize" type="number" min="0" value="0" disabled="true"/>
             </td>
             <td>ADA</td>
             <td><em>The minimum number of ADA that must be present in the UTxO.</em></td>
@@ -137,7 +138,38 @@
         </tbody>
       </table>
     </form>
-    <p>See the <a href="https://cardano-ledger.readthedocs.io/en/latest/explanations/min-utxo.html">Min-Ada-Value Requirement</a> for details of the computations.</p>
+    <hr/>
+    <h2>Minimum ADA for UTxOs containing Single Tokens</h2>
+    <table class="minada">
+      <thead>
+        <tr>
+          <th>Length of Asset Name</th>
+          <th>min-ADA</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>0 Bytes</td>
+          <td id="name0">1.407406 ADA</td>
+        </tr>
+        <tr>
+          <td>1 to 8 Bytes</td>
+          <td id="name8">1.444443 ADA</td>
+        </tr>
+        <tr>
+          <td>9 to 16 Bytes</td>
+          <td id="name16">1.481480 ADA</td>
+        </tr>
+        <tr>
+          <td>17 to 24 Bytes</td>
+          <td id="name24">1.518517 ADA</td>
+        </tr>
+        <tr>
+          <td>25 to 32 Bytes</td>
+          <td id="name32">1.555554 ADA</td>
+        </tr>
+      </tbody>
+    </table>
     <hr/>
     <h2>Examples</h2>
     <h3>Single Token Named "Test"</h3>
@@ -160,7 +192,7 @@
         </tr>
         <tr>
           <td class="section">Results</td>
-        </td>
+        </tr>
         <tr>
           <td>Size of token bundle: <code>12 Words</code></td>
         </tr>
@@ -189,7 +221,7 @@
         </tr>
         <tr>
           <td class="section">Results</td>
-        </td>
+        </tr>
         <tr>
           <td>Size of token bundle: <code>14 Words</code></td>
         </tr>
@@ -218,7 +250,7 @@
         </tr>
         <tr>
           <td class="section">Results</td>
-        </td>
+        </tr>
         <tr>
           <td>Size of token bundle: <code>18 Words</code></td>
         </tr>
@@ -228,6 +260,6 @@
       </tbody>
     </table>
     <hr/>
-    <p>Contact: <a href="mailto:mantis@functionally.io">mantis@functionally.io</a>.</p>
+    <p><em>Contact:</em> <a href="mailto:mantis@functionally.io">mantis@functionally.io</a>.</p>
   </body>
 </html>

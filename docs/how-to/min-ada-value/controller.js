@@ -24,6 +24,7 @@ function roundupBytesToWords(b) {
 }
 
 function recalculate() {
+
   setValue(
     adaOnlyUTxOSize,
     getValue(utxoEntrySizeWithoutVal) +
@@ -57,4 +58,13 @@ function recalculate() {
     setValue(size, 0)
     setAda(minAda, getAda(minUTxOValue))
   }
+
+  [0, 8, 16, 24, 32].forEach(i => {
+     const element = document.getElementById("name" + i)
+     const size1 = 6 + roundupBytesToWords(12 + i + getValue(pidSize))
+     const min1 = quot(getAda(minUTxOValue), getValue(adaOnlyUTxOSize)) *
+        (getValue(utxoEntrySizeWithoutVal) + size1)
+     element.innerText = (min1 / 1000000).toFixed(6) + " ADA"
+  })
+
 }

@@ -3,6 +3,10 @@
 ; padding-top: 1em
 }
 
+.emphasize {
+  font-weight: bold
+}
+
 label {
   font-family: monospace
 }
@@ -19,16 +23,22 @@ input {
   text-align: right
 }
 
-form table tbody tr td:nth-child(2) {
+.minada td {
+  text-align   : right
+; padding-left : 3px
+; padding-right: 3px
+}
+
+form td:nth-child(2) {
   display: none
 }
 
-form table tbody tr td:last-child {
+form td:last-child {
   white-space: break-spaces
 ; font-family: serif
 }
 
-form table tbody tr {
+form tr {
  white-space: nowrap
 }
 
