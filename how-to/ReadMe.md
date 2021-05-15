@@ -6,6 +6,7 @@ Miscellaneous Notes on Cardano
 *   [Locking ADA for staking](script-rewards/ReadMe.md).
 *   [Token minting metadata statistics](token-metadata-statistics.md)
 *   [Online min-ADA calculator](https://mantis.functionally.io/how-to/min-ada-value/)
+*   [Scripts on `mainnet`](https://ipfs.io/ipns/QmZQEPpi5A4SXCntiUb1carkuB23niLgejtyxLhECQ24pA)
 
 
 Projects
