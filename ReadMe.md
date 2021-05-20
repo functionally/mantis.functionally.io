@@ -19,3 +19,4 @@ Miscellaneous Notes on Cardano
 *   [Locking ADA for staking](how-to/script-rewards/ReadMe.md).
 *   [Token minting metadata statistics](how-to/token-metadata-statistics.md)
 *   [Online min-ADA calculator](https://mantis.functionally.io/how-to/min-ada-value/)
+*   [Scripts on `mainnet`](https://mantis.functionally.io/how-to/mainnet-scripts.html)
