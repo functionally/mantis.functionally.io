@@ -13,5 +13,6 @@ Projects
 --------
 
 *   [Tool for minting/burning tokens, or posting metadata](https://github.com/functionally/mantis/blob/main/ReadMe.md)
+*   [A general-purpose oracle written in Plutus](https://github.com/functionally/mantis-oracle/blob/main/ReadMe.md)
 *   [An example oracle](../ReadMe.md)
 *   [Some NFTs](https://www.bwbush.io/nfts.html)
