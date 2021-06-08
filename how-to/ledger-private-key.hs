@@ -52,7 +52,8 @@ main =
         . BS8.pack
         <$> if null seedHex    
               then do
-                     putStrLn $ "Example seed: " ++ exampleSeedHex
+                     putStrLn "Example seed:"
+                     putStrLn exampleSeedHex
                      return exampleSeedHex
               else return seedHex
     let
