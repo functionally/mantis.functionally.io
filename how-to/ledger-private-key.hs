@@ -61,7 +61,7 @@ main =
           (
               hmacGetDigest
             . hmac ed25519key
-            $ (BS.singleton 1) `BS.append` (seed :: BS.ByteString)
+            $ BS.singleton 1 `BS.append` seed
             :: Digest SHA256
           )
       raw = BA.unpack $ hashRepeatedly seed
