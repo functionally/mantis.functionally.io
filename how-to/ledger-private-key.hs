@@ -85,14 +85,14 @@ main =
 hashRepeatedly :: BA.ByteArrayAccess a
                => a
                -> Digest SHA512
-hashRepeatedly seed =
+hashRepeatedly =
   let
-    go seed' =
+    go seed =
       let
-        seed'' = hmacGetDigest $ hmac ed25519key seed'
+        seed' = hmacGetDigest $ hmac ed25519key seed
       in
-        if (BA.unpack seed'' !! 31) .&. 0b00100000 == 0
-          then seed''
+        if (BA.unpack seed' !! 31) .&. 0b00100000 == 0
+          then seed'
           else go seed'
   in
-    go seed
+    go
