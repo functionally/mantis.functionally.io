@@ -9,7 +9,7 @@
   </head>
   <body onload="recalculate()">
     <h1>Minimum ADA for Token Bundles</h1>
-    <p>See the <a href="https://cardano-ledger.readthedocs.io/en/latest/explanations/min-utxo.html">Min-Ada-Value Requirement</a> for details of these computations.</p>
+    <p>See the <a href="https://webcache.googleusercontent.com/search?q=cache:HzFHivyFVSIJ:https://cardano-ledger.readthedocs.io/en/latest/explanations/min-utxo.html+&cd=1&hl=en&ct=clnk&gl=us">Min-Ada-Value Requirement</a> for details of these computations.</p>
     <form>
       <table>
         <tbody>
@@ -45,10 +45,10 @@
               <label for="coinSize">coinSize</label>
             </td>
             <td>
-              <input id="coinSize" type="number" min="0" value="0" onkeydown="recalculate()" oninput="recalculate()"/>
+              <input id="coinSize" type="number" min="0" value="2" onkeydown="recalculate()" oninput="recalculate()"/>
             </td>
             <td>Bytes</td>
-            <td><em>According to <a href="https://cardano-ledger.readthedocs.io/en/latest/explanations/min-utxo.html">Min-Ada-Value Requirement</a>, this parameter will be corrected to be 2 "in the next fork" because the value 0 was an implementation error.</em></td> 
+            <td><em>At the Alonzo HFC, this parameter was corrected to be 2 because the original value 0 was an implementation error.</em></td> 
           </tr>
           <tr>
             <td>UTxO size without any value</td>
