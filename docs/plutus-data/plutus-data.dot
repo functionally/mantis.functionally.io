@@ -1,0 +1,75 @@
+digraph G {
+
+  label=<<b>Alonzo Data Ecosystem, v1.30.1</b>>
+  labelloc=top
+
+  rankdir=TB
+
+  node [shape=record]
+
+  BuiltinData [label="{plutus-ledger-api|Plutus.V1.Ledger.Api}|BuiltinData"]
+
+  a [label="a"]
+
+  a -> BuiltinData [label="ToData a ⇒\ntoBuiltinData"]
+  BuiltinData -> a [label="FromData a ⇒\nfromBuiltinData"]
+  BuiltinData -> a [label="UnsafeFromData a ⇒\nunsafeFromBuiltinData"]
+
+  Datum [label="{plutus-ledger-api|Plutus.V1.Ledger.Api}|Datum"]
+
+  Datum -> BuiltinData [label="getDatum"]
+  BuiltinData -> Datum [label="Datum"]
+
+  Redeemer [label="{plutus-ledger-api|Plutus.V1.Ledger.Api}|Redeemer"]
+
+  Redeemer -> BuiltinData [label="getRedeemer"]
+  BuiltinData -> Redeemer [label="Redeemer"]
+
+  Data [label="{plutus-ledger-api|Plutus.V1.Ledger.Api}|Data|{DataConstr Integer [Data]|Map [(Data, Data)]|List [Data]|I Integer|B ByteString}"]
+
+  Data -> BuiltinData [label="BuiltinData"]
+  Data -> BuiltinData [label="dataToBuiltinData"]
+  BuiltinData -> Data [label="builtinDataToData"]
+
+  ScriptData [label="{cardano-api|Cardano.Api.Shelley}|ScriptData|{ScriptDataConstructor Integer [ScriptData]|ScriptDataMap [(ScriptData, ScriptData)]|ScriptDataList [ScriptData]|ScriptDataNumber Integer|ScriptDataBytes ByteString}"]
+
+  ScriptData -> Data [label="toPlutusData"]
+  Data -> ScriptData [label="fromPlutusData"]
+
+  AlonzoData [label="{cardano-ledger-alonzo|Cardano.Ledger.Alonzo.Data}|Data era"]
+
+  AlonzoData -> ScriptData [label="fromAlonzoData"]
+  ScriptData -> AlonzoData [label="toAlonzoData"]
+  Data -> AlonzoData [label="pattern Data", dir=both]
+
+  ScriptRedeemer [label="{cardano-api|Cardano.Api}|ScriptRedeemer"]
+
+  ScriptRedeemer -> ScriptData [label="type"]
+
+  ScriptDatum [label="{cardano-api|Cardano.Api}|ScriptDatum witctx"]
+
+  ScriptData -> ScriptDatum [label="ScriptDatumForTxIn"]
+
+  Value [label="{cardani-api|Cardano.Api}|Value"]
+
+  Value -> Datum [label="fromJSON"]
+  Datum -> Value [label="toJSON"]
+
+  Value -> Redeemer [label="fromJSON"]
+  Redeemer -> Value [label="toJSON"]
+
+  Value -> a [label="FromJSON a ⇒\nfromJSON"]
+  a -> Value [label="ToJSON a ⇒\ntoJSON"]
+
+  a -> Data [label="ToData a ⇒\ntoData"]
+  Data -> a [label="FromData a ⇒\nfromData"]
+
+  IsData [label="ToData a ⇒\nFromData a ⇒\nUnstableFromData a ⇒\na"]
+
+  a -> IsData [label="unstableMakeIsData"]
+  a -> IsData [label="makeIsDataIndexed"]
+
+  IsData -> BuiltinData [label="toBuiltinData"]
+  BuiltinData -> IsData [label="fromBuiltinData"]
+  BuiltinData -> IsData [label="unsafeFromBuiltinData"]
+}
